@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "371845982423",
+    "project_id": "pradeep-services",
+    "storage_bucket": "pradeep-services.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:371845982423:android:a8084c674b498d96fba892",
+        "android_client_info": {
+          "package_name": "com.srsoft.pradeepservices"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn5_DfXBhd6Mdd_xlOtvM6xT9oEr1YV0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

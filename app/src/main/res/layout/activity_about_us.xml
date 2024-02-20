@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.AboutUsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/btnBackTop"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/baseline_keyboard_backspace_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="About us"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbar">
+
+
+        <ImageView
+            android:id="@+id/ivUserBg"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_marginHorizontal="@dimen/_6sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_102sdp"
+            android:layout_height="@dimen/_102sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserBg"
+            app:layout_constraintEnd_toEndOf="@+id/ivUserBg"
+            app:layout_constraintStart_toStartOf="@+id/ivUserBg"
+            app:layout_constraintTop_toTopOf="@+id/ivUserBg"
+            app:shapeAppearanceOverlay="@style/circleImageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:text="@string/about_us"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/profImage"
+        tools:layout_editor_absoluteX="13dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

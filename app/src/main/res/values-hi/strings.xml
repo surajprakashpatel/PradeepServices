@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name" translatable="false">Pradeep Services</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="heading1">विश्वास</string>
+    <string name="heading2">श्रेष्ठता</string>
+    <string name="heading3">Award Winning</string>
+    <string name="desc1">Your trusted guide to financial\n security and prosperity.</string>
+    <string name="desc2">Proven excellence, personalized\n financial solutions.</string>
+    <string name="desc3">Awarded by MDRT-USA, trusted \npartener in financial planning. </string>
+    <string translatable="true" name="about_us">नमस्कार\n
+        मैं प्रदीप साहू ,\n
+        हमारा उद्देश्य 5000 परिवारों को आर्थिक रूप से सुरक्षित करना है जिसमे हमारे साथ अभी 800 परिवार शामिल हो चुके है मैं निरंतर 4 वर्षो से 800 संतुष्ट परिवारों को सेवा दे रहा हु ।\n
+        मुझे LIC के इस क्षेत्र में -\n
+        1.निरंतर 3 बार MDRT(USA) से सम्मानित जो बीमा के क्षेत्र का आस्कर अवार्ड के नाम से जाना जाता है ।\n
+        2.इंटरनेशनल ट्रेनर से ट्रेनिंग प्रशिक्षण का प्रमाण पत्र ।\n
+        3.रिटायरमेंट प्लानिंग में एक्सपर्ट ।\n
+        ग्राम खाती को 1 वर्ष के भीतर 110 परिवारों को सुरक्षित कर बीमा ग्राम घोषित करना ।\n
+        Pradeep Sahu\n
+        Life Advisor\n
+        Retainment Planing Expert\n
+        MDRT USA\n
+        संपर्क - 8959968862
+    </string>
+</resources>
