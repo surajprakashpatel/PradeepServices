@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Plans and Policies"
+                android:text="@string/plans_and_policies"
                 android:textSize="@dimen/_15sdp"
                 android:layout_gravity="center"
                 android:textColor="@color/yellow"

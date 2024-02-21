@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.activities.DashboardActivity">
 
+
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,18 +21,38 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:text="Welcome"
-                android:textStyle="bold"
-                android:textColor="@color/yellow"
-                android:textSize="@dimen/_20ssp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="Welcome"
+                    android:textStyle="bold"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/_20ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:scaleX="1.3"
+                    android:scaleY="1.3"
+                    android:checked="true"
+                    android:textOff="हि"
+                    android:textOn="En"
+                    android:textSize="@dimen/_4sdp"
+                    app:showText="true" />
+            </LinearLayout>
+
 
             <TextView
                 android:id="@+id/textView2"
@@ -38,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_10sdp"
-                android:text="Nice to see you again!"
+                android:text="@string/nice_to_see_you_again"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,23 +69,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/slide_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_margin="@dimen/_6sdp" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dotsIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slide_pager"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="4dp"
+                    app:dotsColor="@color/grey"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="8dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsWidthFactor="1"
+                    app:progressMode="false"
+                    app:selectedDotColor="@color/blue" />
+
                 <com.facebook.shimmer.ShimmerFrameLayout
                     android:id="@+id/slider_shimmer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_130sdp"
                         android:layout_margin="@dimen/_12sdp"
-                        app:cardBackgroundColor="@color/gray"
+                        app:cardBackgroundColor="@color/grey"
                         app:cardCornerRadius="@dimen/_10sdp">
 
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/slide_pager"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_130sdp"
-                            android:scaleType="fitXY"/>
                     </androidx.cardview.widget.CardView>
+
                 </com.facebook.shimmer.ShimmerFrameLayout>
             </RelativeLayout>
 

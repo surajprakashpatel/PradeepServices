@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_90sdp"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:textColor="@color/yellow"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_8sdp"
-        android:text="Please register to continue using our app."
+        android:text="@string/please_register_to_continue_using_our_app"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
             android:drawableStart="@drawable/ic_user"
             android:drawablePadding="@dimen/_10sdp"
             android:text=""
-            android:hint="Name"
+            android:hint="@string/name"
             android:textSize="@dimen/_12ssp" />
 
 
@@ -86,7 +86,7 @@
             android:maxLength="10"
             android:drawablePadding="@dimen/_10sdp"
             android:text=""
-            android:hint="Mobile"
+            android:hint="@string/mobile"
             android:textSize="@dimen/_12ssp" />
 
 
@@ -114,7 +114,7 @@
             android:drawableTint="@color/yellow"
             android:drawablePadding="@dimen/_10sdp"
             android:text=""
-            android:hint="Email"
+            android:hint="@string/email"
             android:textSize="@dimen/_12ssp" />
 
 
@@ -144,7 +144,7 @@
             android:drawablePadding="@dimen/_10sdp"
             android:inputType="textPassword"
             android:text=""
-            android:hint="Password"
+            android:hint="@string/password"
             android:textSize="@dimen/_12ssp" />
 
 
@@ -159,7 +159,7 @@
         android:gravity="center"
         android:checked="true"
         android:paddingStart="@dimen/_10sdp"
-        android:text="I agree with privacy policy"
+        android:text="@string/i_agree_with_privacy_policy"
         android:layout_marginStart="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_15sdp"
         app:buttonTint="@color/yellow"
@@ -173,7 +173,7 @@
         android:background="@drawable/round_btn"
         android:letterSpacing="0"
         android:layout_marginTop="@dimen/_25sdp"
-        android:text="Sign up"
+        android:text="@string/sign_up"
         android:textAllCaps="false"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"

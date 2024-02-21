@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,9 +17,11 @@ import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.adapter.ImportantLinksAdapter;
 import com.srsoft.pradeepservices.databinding.ActivityImportantLinksBinding;
 import com.srsoft.pradeepservices.modals.Item;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ImportantLinksActivity extends AppCompatActivity {
 
@@ -28,6 +31,14 @@ public class ImportantLinksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String lang = PreferenceUtils.getString("lang",ImportantLinksActivity.this);
+        if(lang.matches("hindi")){
+            Locale locale = new Locale("hi");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         binding = ActivityImportantLinksBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialization();

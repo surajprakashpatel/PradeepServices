@@ -11,15 +11,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.srsoft.pradeepservices.R;
+import com.srsoft.pradeepservices.databinding.ActivitySplashBinding;
 
 import java.util.Locale;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private ActivitySplashBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        binding = ActivitySplashBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
 
         new Handler().postDelayed(new Runnable() {
@@ -31,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(intent);
                     finishAffinity();
                 }else{
-                    Intent intent = new Intent(SplashActivity.this, WelcomeActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, LanguageSelectorActivity.class);
                     startActivity(intent);
                     finishAffinity();
                 }

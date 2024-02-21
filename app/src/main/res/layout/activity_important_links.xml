@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Important Links"
+                android:text="@string/important_links"
                 android:textColor="@color/yellow"
                 android:textSize="@dimen/_15sdp"
                 android:textStyle="bold" />

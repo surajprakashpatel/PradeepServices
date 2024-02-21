@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,9 +17,11 @@ import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.adapter.MyPlansAdapter;
 import com.srsoft.pradeepservices.databinding.ActivityGalleryBinding;
 import com.srsoft.pradeepservices.modals.Item;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class GalleryActivity extends AppCompatActivity {
 
@@ -28,6 +31,14 @@ public class GalleryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String lang = PreferenceUtils.getString("lang",GalleryActivity.this);
+        if(lang.matches("hindi")){
+            Locale locale = new Locale("hi");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         binding= ActivityGalleryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialization();

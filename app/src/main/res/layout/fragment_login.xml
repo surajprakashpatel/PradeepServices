@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_90sdp"
-        android:text="Login Now"
+        android:text="@string/login_now"
         android:textColor="@color/yellow"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
-        android:text="Please login to continue using our app."
+        android:text="@string/please_login_to_continue_using_our_app"
         android:textColor="@color/black"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
             android:drawableTint="@color/yellow"
             android:drawablePadding="@dimen/_10sdp"
             android:text=""
-            android:hint="Email"
+            android:hint="@string/email"
             android:textSize="@dimen/_12ssp" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -150,7 +150,7 @@
             android:drawableTint="@color/yellow"
             android:inputType="textPassword"
             android:text=""
-            android:hint="Password"
+            android:hint="@string/password"
             android:textSize="@dimen/_12ssp" />
 
 
@@ -161,7 +161,7 @@
         android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password?"
+        android:text="@string/forgot_password"
         android:textColor="@color/yellow"
         android:textSize="@dimen/_12ssp"
         android:layout_marginTop="@dimen/_15sdp"
@@ -175,7 +175,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_btn"
         android:letterSpacing="0"
-        android:text="Login"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="@dimen/_16ssp"
       android:layout_marginTop="@dimen/_25sdp"

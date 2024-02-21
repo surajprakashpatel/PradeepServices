@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enquiry / Feedback"
+                android:text="@string/enquiry_feedback"
                 android:textSize="@dimen/_15sdp"
                 android:layout_gravity="center"
                 android:textColor="@color/yellow"
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
-                android:text="Enter your query here"
+                android:text="@string/enter_your_query_here"
                 android:textSize="15sp" />
 
             <EditText
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/round_btn"
         android:letterSpacing="0"
-        android:text="Submit"
+        android:text="@string/submit"
         android:textAllCaps="false"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView5" />

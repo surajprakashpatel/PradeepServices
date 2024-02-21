@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
+import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.adapter.MyFragmentAdapter;
 import com.srsoft.pradeepservices.databinding.ActivityLoginRegisterBinding;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
+
+import java.util.Locale;
 
 public class LoginRegisterActivity extends AppCompatActivity {
 
@@ -28,12 +33,20 @@ public class LoginRegisterActivity extends AppCompatActivity {
     }
 
     private void initialization() {
+        String lang = PreferenceUtils.getString("lang",LoginRegisterActivity.this);
+        if(lang.matches("hindi")){
+            Locale locale = new Locale("hi");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
 
         tabLayout = binding.tabLayout;
         viewPager2 = binding.viewPager2;
 
-        tabLayout.addTab(tabLayout.newTab().setText("Register"));
-        tabLayout.addTab(tabLayout.newTab().setText("Login"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.register));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.login));
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 

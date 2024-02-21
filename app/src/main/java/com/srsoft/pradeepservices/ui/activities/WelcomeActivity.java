@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.common.BaseActivity;
 import com.srsoft.pradeepservices.databinding.ActivityWelcomeBinding;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
 import java.util.Locale;
 
@@ -38,6 +39,10 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String lang = PreferenceUtils.getString("lang",WelcomeActivity.this);
+        if(lang.matches("hindi")){
+            setLocale("hi");
+        }
         binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -59,6 +64,9 @@ public class WelcomeActivity extends BaseActivity {
 
 
 
+
+        binding.btnNext.setText(R.string.next);
+        binding.btnStart.setText(R.string.get_started);
         binding.tvTitle.setText(headings[0]);
         binding.tvDesc.setText(descriptions[0]);
 
@@ -100,12 +108,6 @@ public class WelcomeActivity extends BaseActivity {
                 if (current < images.length) {
                     // move to next screen
                     binding.viewPager.setCurrentItem(current);
-//                    Locale locale = new Locale("hi");
-//                    Locale.setDefault(locale);
-//                    Configuration config = new Configuration();
-//                    config.locale = locale;
-//                    getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-//                    recreate();
                 }
             }
         });
@@ -157,6 +159,20 @@ public class WelcomeActivity extends BaseActivity {
         public void destroyItem(ViewGroup container, int position, Object object) {
             View view = (View) object;
             container.removeView(view);
+        }
+    }
+    private void setLocale(String languageCode) {
+        Locale currentLocale = getResources().getConfiguration().locale;
+        if (!currentLocale.getLanguage().equals(languageCode)) {
+
+            Locale locale = new Locale(languageCode);
+            Locale.setDefault(locale);
+            Configuration configuration = new Configuration();
+            configuration.locale = locale;
+            getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
+
+            // Restart activity to apply language change
+            recreate();
         }
     }
 }

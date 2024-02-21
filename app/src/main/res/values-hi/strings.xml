@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-    <string name="app_name" translatable="false">Pradeep Services</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="heading1">विश्वास</string>
-    <string name="heading2">श्रेष्ठता</string>
-    <string name="heading3">Award Winning</string>
-    <string name="desc1">Your trusted guide to financial\n security and prosperity.</string>
-    <string name="desc2">Proven excellence, personalized\n financial solutions.</string>
-    <string name="desc3">Awarded by MDRT-USA, trusted \npartener in financial planning. </string>
-    <string translatable="true" name="about_us">नमस्कार\n
+    <string name="heading2">उत्कृष्टता</string>
+    <string name="heading3">पुरस्कृत</string>
+    <string name="desc1">आपका वित्तीय सुरक्षा और समृद्धि के विश्वसनीय मार्गदर्शक।</string>
+    <string name="desc2">सिद्ध उत्कृष्टता, व्यक्तिगत वित्तीय समाधान।</string>
+    <string name="desc3">MDRT-USA द्वारा पुरस्कृत, वित्तीय योजना में विश्वसनीय साथी।</string>
+    <string name="app_name">Pradeep Services</string>
+<string name="about_us">हमारे बारे में</string>
+<string name="our_special_plans">हमारे विशेष योजनाएं</string>
+<string name="gallery">गैलरी</string>
+<string name="plans_and_policies">योजनाएं और नीतियाँ</string>
+<string name="enquiry_feedback">पूछताछ></string>
+<string name="learning_material">शिक्षा सामग्री</string>
+<string name="important_links">महत्वपूर्ण लिंक</string>
+<string name="your_policies">आपकी नीतियाँ</string>
+<string name="good_afternoon">शुभ अपराह्न!</string>
+<string name="good_morning">शुभ प्रभात!</string>
+<string name="good_evening">शुभ संध्या!</string>
+<string name="enter_your_query_here">यहाँ अपना प्रश्न दर्ज करें</string>
+<string name="submit">submit</string>
+<string name="preview">पूर्वावलोकन</string>
+<string name="next">अगला</string>
+    <string name="about_us_text">नमस्कार\n
         मैं प्रदीप साहू ,\n
         हमारा उद्देश्य 5000 परिवारों को आर्थिक रूप से सुरक्षित करना है जिसमे हमारे साथ अभी 800 परिवार शामिल हो चुके है मैं निरंतर 4 वर्षो से 800 संतुष्ट परिवारों को सेवा दे रहा हु ।\n
         मुझे LIC के इस क्षेत्र में -\n
@@ -24,4 +37,18 @@
         MDRT USA\n
         संपर्क - 8959968862
     </string>
+<string name="get_started">शुरुआत करें</string>
+<string name="login_now">लॉगिन करें</string>
+<string name="please_login_to_continue_using_our_app">हमारे ऐप का उपयोग जारी रखने के लिए कृपया लॉगिन करें।</string>
+<string name="forgot_password">पासवर्ड भूल गए?</string>
+<string name="login">लॉगिन</string>
+<string name="sign_up">साइन अप</string>
+<string name="please_register_to_continue_using_our_app">हमारे ऐप का उपयोग जारी रखने के लिए कृपया रजिस्टर करें।</string>
+<string name="i_agree_with_privacy_policy">मैं गोपनीयता नीति से सहमत हूँ</string>
+<string name="name">नाम</string>
+<string name="mobile">मोबाइल</string>
+<string name="email">ईमेल</string>
+<string name="password">पासवर्ड</string>
+    <string name="register">रजिस्टर</string>
+    <string name="nice_to_see_you_again">आपका स्वागत है</string>
 </resources>

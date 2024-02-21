@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -18,9 +19,11 @@ import com.srsoft.pradeepservices.adapter.PlansAndPoliciesAdapter;
 import com.srsoft.pradeepservices.databinding.ActivityPlansPoliciesBinding;
 import com.srsoft.pradeepservices.modals.Item;
 import com.srsoft.pradeepservices.modals.Plans;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PlansPoliciesActivity extends AppCompatActivity {
 
@@ -30,6 +33,14 @@ public class PlansPoliciesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String lang = PreferenceUtils.getString("lang",PlansPoliciesActivity.this);
+        if(lang.matches("hindi")){
+            Locale locale = new Locale("hi");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         binding = ActivityPlansPoliciesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialization();

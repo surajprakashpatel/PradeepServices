@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,8 +16,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.databinding.ActivityFeedbackBinding;
+import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class FeedbackActivity extends AppCompatActivity {
@@ -25,6 +28,14 @@ public class FeedbackActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String lang = PreferenceUtils.getString("lang",FeedbackActivity.this);
+        if(lang.matches("hindi")){
+            Locale locale = new Locale("hi");
+            Locale.setDefault(locale);
+            Configuration config = new Configuration();
+            config.locale = locale;
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
         binding= ActivityFeedbackBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         initialization();

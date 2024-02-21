@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.srsoft.pradeepservices.databinding.ServiceItemLayoutBinding;
 import com.srsoft.pradeepservices.modals.Services;
 import com.srsoft.pradeepservices.ui.activities.AboutUsActivity;
+import com.srsoft.pradeepservices.ui.activities.CustomerServiceActivity;
 import com.srsoft.pradeepservices.ui.activities.FeedbackActivity;
 import com.srsoft.pradeepservices.ui.activities.GalleryActivity;
 import com.srsoft.pradeepservices.ui.activities.ImportantLinksActivity;
@@ -59,18 +60,21 @@ public class ServicesAdapater extends RecyclerView.Adapter<ServicesAdapater.MyVi
                        intent = new Intent(context, MyPlansActivity.class);
                         break;
                     case 2 :
-                        intent = new Intent(context, GalleryActivity.class);
+                        intent = new Intent(context, CustomerServiceActivity.class);
                         break;
                     case 3 :
-                        intent = new Intent(context, PlansPoliciesActivity.class);
+                        intent = new Intent(context, GalleryActivity.class);
                         break;
                     case 4 :
-                        intent = new Intent(context, FeedbackActivity.class);
+                        intent = new Intent(context, PlansPoliciesActivity.class);
                         break;
                     case 5 :
-                        intent = new Intent(context, LearningMaterialActivity.class);
+                        intent = new Intent(context, FeedbackActivity.class);
                         break;
                     case 6 :
+                        intent = new Intent(context, LearningMaterialActivity.class);
+                        break;
+                    case 7 :
                         intent = new Intent(context, ImportantLinksActivity.class);
                         break;
                 }
