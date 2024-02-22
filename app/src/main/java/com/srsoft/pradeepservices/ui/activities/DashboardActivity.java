@@ -1,5 +1,12 @@
 package com.srsoft.pradeepservices.ui.activities;
 
+import android.content.res.Configuration;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.CompoundButton;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -7,13 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.content.res.Configuration;
-import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -50,6 +50,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     private int pos = 0;
     private ServicesAdapater servicesAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,16 +58,17 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         initialization();
     }
+
     private void initialization() {
 
         binding.switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(binding.switchButton.isChecked()){
-                    PreferenceUtils.setString("lang","english",getApplicationContext());
+                if (binding.switchButton.isChecked()) {
+                    PreferenceUtils.setString("lang", "english", getApplicationContext());
                     setLocale("en");
-                }else{
-                    PreferenceUtils.setString("lang","hindi",getApplicationContext());
+                } else {
+                    PreferenceUtils.setString("lang", "hindi", getApplicationContext());
                     setLocale("hi");
                 }
             }
@@ -75,9 +77,9 @@ public class DashboardActivity extends AppCompatActivity {
         binding.textView2.setText(R.string.nice_to_see_you_again);
         setSlider();
         int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
-        if(currentHour > 4) binding .textView.setText(R.string.good_morning);
-        if(currentHour > 12) binding.textView.setText(R.string.good_afternoon);
-        if(currentHour > 17 )binding.textView.setText(R.string.good_evening);
+        if (currentHour > 4) binding.textView.setText(R.string.good_morning);
+        if (currentHour > 12) binding.textView.setText(R.string.good_afternoon);
+        if (currentHour > 17) binding.textView.setText(R.string.good_evening);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -90,13 +92,13 @@ public class DashboardActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
         binding.sliderShimmer.startShimmer();
 
-        Services service1 = new Services(getString(R.string.about_us),R.drawable.about);
-        Services service2 = new Services(getString(R.string.our_special_plans),R.drawable.myplans);
-        Services service3 = new Services(getString(R.string.gallery),R.drawable.gallery);
-        Services service4 = new Services(getString(R.string.plans_and_policies),R.drawable.plansandpolicies);
-        Services service5 = new Services(getString(R.string.enquiry_feedback),R.drawable.enquiry_feedback);
-        Services service6 = new Services(getString(R.string.learning_material),R.drawable.learning_material);
-        Services service7 = new Services(getString(R.string.important_links),R.drawable.legal_document);
+        Services service1 = new Services(getString(R.string.about_us), R.drawable.about);
+        Services service2 = new Services(getString(R.string.our_special_plans), R.drawable.myplans);
+        Services service3 = new Services(getString(R.string.gallery), R.drawable.gallery);
+        Services service4 = new Services(getString(R.string.plans_and_policies), R.drawable.plansandpolicies);
+        Services service5 = new Services(getString(R.string.enquiry_feedback), R.drawable.enquiry_feedback);
+        Services service6 = new Services(getString(R.string.learning_material), R.drawable.learning_material);
+        Services service7 = new Services(getString(R.string.important_links), R.drawable.legal_document);
         Services service8 = new Services(getString(R.string.your_policies), R.drawable.mypolicies);
         services.add(service1);
         services.add(service2);
@@ -112,8 +114,6 @@ public class DashboardActivity extends AppCompatActivity {
         servicesAdapter = new ServicesAdapater(DashboardActivity.this, services);
 
 
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -121,7 +121,7 @@ public class DashboardActivity extends AppCompatActivity {
                 binding.gamesShimmer.setVisibility(View.GONE);
                 binding.serviceRecycler.setAdapter(servicesAdapter);
             }
-        },2000);
+        }, 2000);
 
     }
 
@@ -166,7 +166,7 @@ public class DashboardActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             sliderList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 sliderList.add(document.toObject(Advertisement.class));
@@ -206,8 +206,6 @@ public class DashboardActivity extends AppCompatActivity {
             Configuration configuration = new Configuration();
             configuration.locale = locale;
             getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-
-            // Restart activity to apply language change
             recreate();
         }
     }

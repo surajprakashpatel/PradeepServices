@@ -13,7 +13,6 @@ import com.srsoft.pradeepservices.ui.fragments.RegisterFragment;
 public class MyFragmentAdapter extends FragmentStateAdapter {
 
 
-
     public MyFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
@@ -21,10 +20,10 @@ public class MyFragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if (position == 0){
+        if (position == 0) {
             return new RegisterFragment();
         }
-        if(position==1){
+        if (position == 1) {
             return new LoginFragment();
         }
 

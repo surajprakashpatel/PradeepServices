@@ -8,13 +8,14 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.srsoft.pradeepservices.databinding.PlansItemLayoutBinding;
 import com.srsoft.pradeepservices.modals.Plans;
 import com.srsoft.pradeepservices.ui.activities.WebViewActivity;
 
 import java.util.List;
 
-public class PlansAndPoliciesAdapter  extends RecyclerView.Adapter<PlansAndPoliciesAdapter.MyViewHolder> {
+public class PlansAndPoliciesAdapter extends RecyclerView.Adapter<PlansAndPoliciesAdapter.MyViewHolder> {
 
     Intent intent;
 
@@ -40,9 +41,9 @@ public class PlansAndPoliciesAdapter  extends RecyclerView.Adapter<PlansAndPolic
         holder.mBinding.categoryTitle.setText(currItem.getName());
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(context, WebViewActivity.class);
-                intent.putExtra("url",currItem.getLink());
+                intent.putExtra("url", currItem.getLink());
                 context.startActivity(intent);
             }
         });
@@ -57,6 +58,7 @@ public class PlansAndPoliciesAdapter  extends RecyclerView.Adapter<PlansAndPolic
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         PlansItemLayoutBinding mBinding;
+
         MyViewHolder(PlansItemLayoutBinding mBinding) {
             super(mBinding.getRoot());
             this.mBinding = mBinding;

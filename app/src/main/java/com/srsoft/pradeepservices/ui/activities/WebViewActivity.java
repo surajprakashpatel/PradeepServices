@@ -1,19 +1,19 @@
 package com.srsoft.pradeepservices.ui.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.srsoft.pradeepservices.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.srsoft.pradeepservices.databinding.ActivityWebViewBinding;
 
 public class WebViewActivity extends AppCompatActivity {
 
     private ActivityWebViewBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class WebViewActivity extends AppCompatActivity {
         String url = intent.getStringExtra("url");
 
 
-        WebView webView= binding.webView;
+        WebView webView = binding.webView;
 
 
         webView.getSettings().setJavaScriptEnabled(true);

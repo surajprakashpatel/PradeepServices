@@ -15,6 +15,9 @@
         android:theme="@style/Theme.PradeepServices"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.AddPolicyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.LanguageSelectorActivity"
             android:exported="false" />
         <activity

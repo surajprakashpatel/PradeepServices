@@ -2,7 +2,6 @@ package com.srsoft.pradeepservices.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,14 +23,15 @@ public class ImportantLinksAdapter extends RecyclerView.Adapter<ImportantLinksAd
     String x = "y";
     private List<Plans> learningMaterials;
 
-    public ImportantLinksAdapter(Context context, List<Item> items ) {
+    public ImportantLinksAdapter(Context context, List<Item> items) {
         this.context = context;
         this.items = items;
     }
-    public ImportantLinksAdapter(Context context, List<Plans> learningMaterials,String x){
+
+    public ImportantLinksAdapter(Context context, List<Plans> learningMaterials, String x) {
         this.context = context;
         this.learningMaterials = learningMaterials;
-        this.x=x;
+        this.x = x;
     }
 
     @NonNull
@@ -43,7 +43,7 @@ public class ImportantLinksAdapter extends RecyclerView.Adapter<ImportantLinksAd
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if(x.matches("x")){
+        if (x.matches("x")) {
             Plans plans = learningMaterials.get(position);
             holder.mBinding.tvTitle.setText(plans.getName());
             holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
@@ -51,11 +51,11 @@ public class ImportantLinksAdapter extends RecyclerView.Adapter<ImportantLinksAd
                 public void onClick(View view) {
 
                     Intent intent = new Intent(context, WebViewActivity.class);
-                    intent.putExtra("url",plans.getLink());
+                    intent.putExtra("url", plans.getLink());
                     context.startActivity(intent);
                 }
             });
-        }else{
+        } else {
             Item item = items.get(position);
 
 
@@ -65,7 +65,7 @@ public class ImportantLinksAdapter extends RecyclerView.Adapter<ImportantLinksAd
                 public void onClick(View view) {
 
                     Intent intent = new Intent(context, WebViewActivity.class);
-                    intent.putExtra("url",item.getLink());
+                    intent.putExtra("url", item.getLink());
                     context.startActivity(intent);
                 }
             });
@@ -75,12 +75,11 @@ public class ImportantLinksAdapter extends RecyclerView.Adapter<ImportantLinksAd
     }
 
 
-
     @Override
     public int getItemCount() {
-        if(x.matches("x")){
+        if (x.matches("x")) {
             return learningMaterials.size();
-        }else{
+        } else {
             return items.size();
         }
 

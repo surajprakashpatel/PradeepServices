@@ -81,10 +81,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_25sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
         android:text="@string/about_us_text"
         android:textSize="@dimen/_13sdp"
         android:textStyle="bold"
-        android:lineSpacingExtra="@dimen/_5sdp"
         app:layout_constraintTop_toBottomOf="@+id/profImage"
         tools:layout_editor_absoluteX="13dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

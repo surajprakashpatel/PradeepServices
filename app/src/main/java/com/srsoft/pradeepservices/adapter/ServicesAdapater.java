@@ -51,37 +51,36 @@ public class ServicesAdapater extends RecyclerView.Adapter<ServicesAdapater.MyVi
         holder.mBinding.categoryTitle.setText(services.get(position).getName());
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                switch (position){
-                    case 0 :
-                       intent = new Intent(context, AboutUsActivity.class);
+            public void onClick(View view) {
+                switch (position) {
+                    case 0:
+                        intent = new Intent(context, AboutUsActivity.class);
                         break;
-                    case 1 :
-                       intent = new Intent(context, MyPlansActivity.class);
+                    case 1:
+                        intent = new Intent(context, MyPlansActivity.class);
                         break;
-                    case 2 :
+                    case 2:
                         intent = new Intent(context, CustomerServiceActivity.class);
                         break;
-                    case 3 :
+                    case 3:
                         intent = new Intent(context, GalleryActivity.class);
                         break;
-                    case 4 :
+                    case 4:
                         intent = new Intent(context, PlansPoliciesActivity.class);
                         break;
-                    case 5 :
+                    case 5:
                         intent = new Intent(context, FeedbackActivity.class);
                         break;
-                    case 6 :
+                    case 6:
                         intent = new Intent(context, LearningMaterialActivity.class);
                         break;
-                    case 7 :
+                    case 7:
                         intent = new Intent(context, ImportantLinksActivity.class);
                         break;
                 }
                 context.startActivity(intent);
             }
         });
-
 
 
     }
@@ -94,6 +93,7 @@ public class ServicesAdapater extends RecyclerView.Adapter<ServicesAdapater.MyVi
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         ServiceItemLayoutBinding mBinding;
+
         MyViewHolder(ServiceItemLayoutBinding mBinding) {
             super(mBinding.getRoot());
             this.mBinding = mBinding;

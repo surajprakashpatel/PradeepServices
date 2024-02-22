@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:paddingHorizontal="@dimen/_15sdp"
     tools:context=".ui.fragments.LoginFragment">
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -32,11 +33,11 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
         android:text="Enter via Social Networks"
         android:textColor="@color/primary"
         android:textSize="@dimen/_12ssp"
         android:visibility="gone"
-        android:layout_marginTop="@dimen/_50sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -46,13 +47,13 @@
         android:id="@+id/googleCard"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:visibility="gone"
         app:cardCornerRadius="@dimen/_40sdp"
         app:layout_constraintEnd_toStartOf="@+id/facebookCard"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="@dimen/_10sdp"
         app:layout_constraintTop_toBottomOf="@+id/textView6">
 
         <ImageView
@@ -66,9 +67,9 @@
         android:id="@+id/facebookCard"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="@dimen/_50sdp"
+        android:layout_margin="@dimen/_10sdp"
         android:visibility="gone"
         app:cardCornerRadius="@dimen/_40sdp"
-        android:layout_margin="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/googleCard"
@@ -88,10 +89,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
         android:gravity="center"
-        android:visibility="gone"
         android:text="or login with\nemail"
         android:textColor="@color/primary"
         android:textSize="@dimen/_12ssp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/facebookCard" />
@@ -115,13 +116,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
-            android:padding="@dimen/_12sdp"
             android:drawableStart="@drawable/ic_mail"
-            android:inputType="textEmailAddress"
-            android:drawableTint="@color/yellow"
             android:drawablePadding="@dimen/_10sdp"
-            android:text=""
+            android:drawableTint="@color/yellow"
             android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/_12sdp"
+            android:text=""
             android:textSize="@dimen/_12ssp" />
 
     </com.google.android.material.card.MaterialCardView>
@@ -144,13 +145,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/transparent"
-            android:padding="@dimen/_12sdp"
             android:drawableStart="@drawable/ic_lock"
             android:drawablePadding="@dimen/_10sdp"
             android:drawableTint="@color/yellow"
-            android:inputType="textPassword"
-            android:text=""
             android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="@dimen/_12sdp"
+            android:text=""
             android:textSize="@dimen/_12ssp" />
 
 
@@ -161,10 +162,10 @@
         android:id="@+id/tv_forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
         android:text="@string/forgot_password"
         android:textColor="@color/yellow"
         android:textSize="@dimen/_12ssp"
-        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
 
@@ -173,16 +174,15 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
         android:background="@drawable/round_btn"
         android:letterSpacing="0"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="@dimen/_16ssp"
-      android:layout_marginTop="@dimen/_25sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

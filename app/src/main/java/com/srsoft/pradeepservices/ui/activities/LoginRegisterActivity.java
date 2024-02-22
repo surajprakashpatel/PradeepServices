@@ -1,11 +1,11 @@
 package com.srsoft.pradeepservices.ui.activities;
 
+import android.content.res.Configuration;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
-
-import android.content.res.Configuration;
-import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 import com.srsoft.pradeepservices.R;
@@ -22,6 +22,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
     MyFragmentAdapter adapter;
     private ActivityLoginRegisterBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +34,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
     }
 
     private void initialization() {
-        String lang = PreferenceUtils.getString("lang",LoginRegisterActivity.this);
-        if(lang.matches("hindi")){
+        String lang = PreferenceUtils.getString("lang", LoginRegisterActivity.this);
+        if (lang.matches("hindi")) {
             Locale locale = new Locale("hi");
             Locale.setDefault(locale);
             Configuration config = new Configuration();
@@ -79,6 +80,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     public void onResume() {
         super.onResume();

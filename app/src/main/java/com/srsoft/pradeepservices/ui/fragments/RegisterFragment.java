@@ -2,14 +2,13 @@ package com.srsoft.pradeepservices.ui.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -17,8 +16,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
-import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.databinding.FragmentRegisterBinding;
 import com.srsoft.pradeepservices.modals.UserModal;
 import com.srsoft.pradeepservices.ui.activities.DashboardActivity;
@@ -50,9 +47,9 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       binding = FragmentRegisterBinding.inflate(getLayoutInflater(),container,false);
+        binding = FragmentRegisterBinding.inflate(getLayoutInflater(), container, false);
         initialization();
-       return binding.getRoot();
+        return binding.getRoot();
 
     }
 
@@ -71,10 +68,10 @@ public class RegisterFragment extends Fragment {
 
         String name = binding.etName.getText().toString();
         String email = binding.etEmail.getText().toString();
-        String phone =binding.etPhone.getText().toString();
-        String password= binding.etPassword.getText().toString().toUpperCase();
+        String phone = binding.etPhone.getText().toString();
+        String password = binding.etPassword.getText().toString().toUpperCase();
 
-        if(name.matches("")){
+        if (name.matches("")) {
             binding.etName.setError("Enter your name");
         } else if (email.matches("")) {
             binding.etEmail.setError("Enter your email");
@@ -82,17 +79,17 @@ public class RegisterFragment extends Fragment {
             binding.etPhone.setError("Enter Phone Number");
         } else if (password.matches("")) {
             binding.etPassword.setError("Set Password");
-        }else{
+        } else {
 
             Toast.makeText(getContext(), "Please wait!", Toast.LENGTH_SHORT).show();
             mAuth = FirebaseAuth.getInstance();
-            mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
 
-                        String userId =task.getResult().getUser().getUid();
-                        UserModal user = new UserModal(name,phone,email,userId);
+                        String userId = task.getResult().getUser().getUid();
+                        UserModal user = new UserModal(name, phone, email, userId);
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
                         db.collection("user").document(userId).set(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
@@ -115,7 +112,7 @@ public class RegisterFragment extends Fragment {
                         });
 
 
-                    }else{
+                    } else {
 
                     }
                 }

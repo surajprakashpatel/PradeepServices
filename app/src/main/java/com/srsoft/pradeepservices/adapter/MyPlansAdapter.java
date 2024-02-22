@@ -13,7 +13,6 @@ import com.bumptech.glide.Glide;
 import com.srsoft.pradeepservices.databinding.ServiceItemLayoutBinding;
 import com.srsoft.pradeepservices.modals.Item;
 import com.srsoft.pradeepservices.ui.activities.ImagePreviewActivity;
-import com.srsoft.pradeepservices.ui.activities.WebViewActivity;
 
 import java.util.List;
 
@@ -43,17 +42,16 @@ public class MyPlansAdapter extends RecyclerView.Adapter<MyPlansAdapter.MyViewHo
         Glide.with(context)
                 .load(item.get(position).getLink())
                 .into(holder.mBinding.categoryImage);
-        holder.mBinding.categoryImage.setPadding(0,0,0,0);
+        holder.mBinding.categoryImage.setPadding(0, 0, 0, 0);
         holder.mBinding.categoryTitle.setVisibility(View.GONE);
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(context, ImagePreviewActivity.class);
-                intent.putExtra("url",currItem.getLink());
+                intent.putExtra("url", currItem.getLink());
                 context.startActivity(intent);
             }
         });
-
 
 
     }
@@ -66,6 +64,7 @@ public class MyPlansAdapter extends RecyclerView.Adapter<MyPlansAdapter.MyViewHo
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         ServiceItemLayoutBinding mBinding;
+
         MyViewHolder(ServiceItemLayoutBinding mBinding) {
             super(mBinding.getRoot());
             this.mBinding = mBinding;

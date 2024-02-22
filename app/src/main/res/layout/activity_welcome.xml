@@ -84,10 +84,10 @@
                 android:id="@+id/dots_indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
                 app:dotsColor="@color/gray"
                 app:dotsSize="@dimen/_8sdp"
                 app:dotsSpacing="@dimen/_2sdp"
-                android:layout_margin="@dimen/_15sdp"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -104,7 +104,6 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/dots_indicator">
-
 
 
                 <Button
@@ -130,11 +129,11 @@
                     android:letterSpacing="0"
                     android:minWidth="0dp"
                     android:minHeight="0dp"
-                    android:visibility="gone"
                     android:paddingHorizontal="@dimen/_40sdp"
                     android:paddingVertical="@dimen/_10sdp"
                     android:text="@string/get_started"
                     android:textAllCaps="false"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent" />
 

@@ -1,10 +1,5 @@
 package com.srsoft.pradeepservices.ui.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -16,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import com.srsoft.pradeepservices.R;
 import com.srsoft.pradeepservices.common.BaseActivity;
@@ -39,8 +38,8 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String lang = PreferenceUtils.getString("lang",WelcomeActivity.this);
-        if(lang.matches("hindi")){
+        String lang = PreferenceUtils.getString("lang", WelcomeActivity.this);
+        if (lang.matches("hindi")) {
             setLocale("hi");
         }
         binding = ActivityWelcomeBinding.inflate(getLayoutInflater());
@@ -61,8 +60,6 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     private void initialization() {
-
-
 
 
         binding.btnNext.setText(R.string.next);
@@ -128,8 +125,10 @@ public class WelcomeActivity extends BaseActivity {
 
     public class ViewPagerAdapter extends PagerAdapter {
         private LayoutInflater layoutInflater;
+
         public ViewPagerAdapter() {
         }
+
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -161,6 +160,7 @@ public class WelcomeActivity extends BaseActivity {
             container.removeView(view);
         }
     }
+
     private void setLocale(String languageCode) {
         Locale currentLocale = getResources().getConfiguration().locale;
         if (!currentLocale.getLanguage().equals(languageCode)) {
