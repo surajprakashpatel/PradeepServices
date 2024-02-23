@@ -21,7 +21,7 @@ import com.srsoft.pradeepservices.modals.UserModal;
 import com.srsoft.pradeepservices.ui.activities.DashboardActivity;
 
 
-public class RegisterFragment extends Fragment {
+public class  RegisterFragment extends Fragment {
 
     private FirebaseAuth mAuth;
     private FragmentRegisterBinding binding;
@@ -113,7 +113,7 @@ public class RegisterFragment extends Fragment {
 
 
                     } else {
-
+                        Toast.makeText(getContext(), "Error!", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -51,6 +51,12 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
     private void initialization() {
 
+        binding.btnBackTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(CustomerServiceActivity.this));
         adapter = new YourPoliciesAdapter(CustomerServiceActivity.this, items);
         binding.recyclerView.setAdapter(adapter);

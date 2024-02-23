@@ -45,13 +45,18 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
                 //show Alert Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Your Plan/Policy");
-                builder.setMessage("Plan Name: " + item.getPlanName() +
-                        "\nCustomer Name: " + item.getName() +
-                        "\nDate of Birth: " + item.getDob() +
-                        "\nCommencement Date: " + item.getDateofCommencement() +
-                        "\nMaturity Date: " + item.getMaturity() +
-                        "\nLast Premium: " + item.getLastPremiumDate() +
-                        "\nSum Assured: " + item.getSumAssured()
+                builder.setMessage("Policy Number: " + item.getPolicyNumber() +
+                        "\n\nPlan Name: " + item.getPlanName() +
+                        "\n\nCustomer Name: " + item.getName() +
+                        "\n\nDate of Birth: " + item.getDob() +
+                        "\n\nMobile Number: " + item.getMobileNumber() +
+                        "\n\nCommencement Date: " + item.getDateofCommencement() +
+                        "\n\nMode: " + item.getPremiumFrequency()+
+                        "\n\nMaturity Date: " + item.getMaturity() +
+                        "\n\nLast Premium: " + item.getLastPremiumDate() +
+                        "\n\nNominee Name: " + item.getNomineeName() +
+                        "\n\nNominee Age: " + item.getNomineeAge() +
+                        "\n\nSum Assured: " + item.getSumAssured()
                 );
                 builder.setPositiveButton("OK", null);
                 builder.show();

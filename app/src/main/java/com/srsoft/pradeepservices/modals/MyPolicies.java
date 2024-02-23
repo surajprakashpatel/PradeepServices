@@ -1,6 +1,12 @@
 package com.srsoft.pradeepservices.modals;
 
 public class MyPolicies {
+
+    private String policyNumber;
+    private String nextDue;
+    private String mobileNumber;
+    private String nomineeName;
+    private String nomineeAge;
     private String name;
     private String planName;
     private String dateofCommencement;
@@ -11,7 +17,7 @@ public class MyPolicies {
 
     private String dob;
 
-    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob) {
+    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob,String nomineeAge, String mobileNumber, String nextDue, String policyNumber,String nomineeName) {
         this.name = name;
         this.planName = planName;
         this.dateofCommencement = dateofCommencement;
@@ -20,9 +26,54 @@ public class MyPolicies {
         this.sumAssured = sumAssured;
         this.premiumFrequency = premiumFrequency;
         this.dob = dob;
+        this.nomineeAge = nomineeAge;
+        this.mobileNumber = mobileNumber;
+        this.nextDue = nextDue;
+        this.policyNumber = policyNumber;
+        this.nomineeName = nomineeName;
     }
 
     public MyPolicies() {
+    }
+
+    public String getPolicyNumber() {
+        return policyNumber;
+    }
+
+    public void setPolicyNumber(String policyNumber) {
+        this.policyNumber = policyNumber;
+    }
+
+    public String getNomineeName() {
+        return nomineeName;
+    }
+
+    public void setNomineeName(String nomineeName) {
+        this.nomineeName = nomineeName;
+    }
+
+    public String getNextDue() {
+        return nextDue;
+    }
+
+    public void setNextDue(String nextDue) {
+        this.nextDue = nextDue;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getNomineeAge() {
+        return nomineeAge;
+    }
+
+    public void setNomineeAge(String nomineeAge) {
+        this.nomineeAge = nomineeAge;
     }
 
     public String getName() {

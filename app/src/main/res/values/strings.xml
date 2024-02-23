@@ -50,6 +50,7 @@
     <string name="register">Register</string>
     <string name="nice_to_see_you_again">Nice to see you again!</string>
     <string-array name="paymentFrequency">
+        <item>Single</item>
         <item>Monthly</item>
         <item>Quarterly</item>
         <item>Half Yearly</item>

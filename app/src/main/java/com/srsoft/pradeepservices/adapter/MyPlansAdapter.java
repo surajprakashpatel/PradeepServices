@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.srsoft.pradeepservices.databinding.MyPlansItemBinding;
 import com.srsoft.pradeepservices.databinding.ServiceItemLayoutBinding;
 import com.srsoft.pradeepservices.modals.Item;
 import com.srsoft.pradeepservices.ui.activities.ImagePreviewActivity;
@@ -31,7 +32,7 @@ public class MyPlansAdapter extends RecyclerView.Adapter<MyPlansAdapter.MyViewHo
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ServiceItemLayoutBinding mBinding = ServiceItemLayoutBinding.inflate(LayoutInflater.from(context), parent, false);
+        MyPlansItemBinding mBinding = MyPlansItemBinding.inflate(LayoutInflater.from(context), parent, false);
         return new MyViewHolder(mBinding);
     }
 
@@ -63,9 +64,9 @@ public class MyPlansAdapter extends RecyclerView.Adapter<MyPlansAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-        ServiceItemLayoutBinding mBinding;
+        MyPlansItemBinding mBinding;
 
-        MyViewHolder(ServiceItemLayoutBinding mBinding) {
+        MyViewHolder(MyPlansItemBinding mBinding) {
             super(mBinding.getRoot());
             this.mBinding = mBinding;
         }

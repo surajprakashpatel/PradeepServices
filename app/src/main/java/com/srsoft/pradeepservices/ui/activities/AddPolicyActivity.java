@@ -37,6 +37,7 @@ public class AddPolicyActivity extends AppCompatActivity {
     private ActivityAddPolicyBinding binding;
 
     String paymentFrequency = "monthly";
+    String dueDate="28/03/2024";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,11 @@ public class AddPolicyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                 Map<String, Object> data = new HashMap<>();
+                data.put("policyNumber", binding.etPolicyNo.getText().toString());
+                data.put("nomineeName", binding.etNominee.getText().toString());
+                data.put("nomineeAge", binding.etNomineeAge.getText().toString());
+                data.put("nextDueDate", "28/03/2024");
+                data.put("mobileNumber", binding.etMobileNo.getText().toString());
                 data.put("name", binding.etCustomerName.getText().toString());
                 data.put("dob", binding.etDOB.getText().toString());
                 data.put("dateofCommencement", binding.etDateofCommencement.getText().toString());
@@ -137,6 +143,7 @@ public class AddPolicyActivity extends AppCompatActivity {
                         calendar.set(year1, month1, dayOfMonth);
                         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                         editText.setText(dateFormat.format(calendar.getTime()));
+                        dueDate = dateFormat.format(calendar.getTime());
                     }, year, month, day);
 
             // Show the date picker dialog
