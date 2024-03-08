@@ -69,7 +69,7 @@ public class  RegisterFragment extends Fragment {
         String name = binding.etName.getText().toString();
         String email = binding.etEmail.getText().toString();
         String phone = binding.etPhone.getText().toString();
-        String password = binding.etPassword.getText().toString().toUpperCase();
+        String password = binding.etPassword.getText().toString();
 
         if (name.matches("")) {
             binding.etName.setError("Enter your name");
@@ -97,8 +97,6 @@ public class  RegisterFragment extends Fragment {
                                 Toast.makeText(getContext(), "Signing In!", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-
                         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

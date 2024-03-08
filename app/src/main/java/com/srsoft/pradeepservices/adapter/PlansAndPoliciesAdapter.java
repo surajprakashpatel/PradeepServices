@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.srsoft.pradeepservices.databinding.PlansItemLayoutBinding;
 import com.srsoft.pradeepservices.modals.Plans;
+import com.srsoft.pradeepservices.ui.activities.ImagePreviewActivity;
 import com.srsoft.pradeepservices.ui.activities.WebViewActivity;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public class PlansAndPoliciesAdapter extends RecyclerView.Adapter<PlansAndPolici
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, WebViewActivity.class);
+                Intent intent = new Intent(context, ImagePreviewActivity.class);
                 intent.putExtra("url", currItem.getLink());
                 context.startActivity(intent);
             }

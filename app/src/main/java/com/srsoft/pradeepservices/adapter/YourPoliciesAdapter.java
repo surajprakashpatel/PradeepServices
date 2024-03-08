@@ -2,6 +2,8 @@ package com.srsoft.pradeepservices.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.srsoft.pradeepservices.databinding.ItemCommonBinding;
 import com.srsoft.pradeepservices.modals.MyPolicies;
+import com.srsoft.pradeepservices.ui.activities.AddPolicyActivity;
 
 import java.util.List;
 
@@ -18,10 +21,12 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
     private Context context;
     private List<MyPolicies> items;
 
+    private List<String> docId;
 
-    public YourPoliciesAdapter(Context context, List<MyPolicies> items) {
+    public YourPoliciesAdapter(Context context, List<MyPolicies> items, List<String> docId) {
         this.context = context;
         this.items = items;
+        this.docId = docId;
     }
 
 
@@ -36,8 +41,9 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         MyPolicies item = items.get(position);
+        String id = docId.get(position);
 
-        holder.mBinding.tvTitle.setText(item.getPlanName());
+        holder.mBinding.tvTitle.setText(item.getName());
 
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +58,7 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
                         "\n\nMobile Number: " + item.getMobileNumber() +
                         "\n\nCommencement Date: " + item.getDateofCommencement() +
                         "\n\nMode: " + item.getPremiumFrequency()+
+                        "\n\nNext Due Date: " + item.getnextDueDate() +
                         "\n\nMaturity Date: " + item.getMaturity() +
                         "\n\nLast Premium: " + item.getLastPremiumDate() +
                         "\n\nNominee Name: " + item.getNomineeName() +
@@ -59,6 +66,14 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
                         "\n\nSum Assured: " + item.getSumAssured()
                 );
                 builder.setPositiveButton("OK", null);
+                builder.setNegativeButton("Edit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(context, AddPolicyActivity.class);
+                        intent.putExtra("edit",id);
+                        context.startActivity(intent);
+                    }
+                });
                 builder.show();
             }
         });

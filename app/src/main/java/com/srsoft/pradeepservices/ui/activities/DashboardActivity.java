@@ -78,8 +78,8 @@ public class DashboardActivity extends AppCompatActivity {
         setSlider();
         int currentHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         if (currentHour > 4) binding.textView.setText(R.string.good_morning);
-        if (currentHour > 12) binding.textView.setText(R.string.good_afternoon);
-        if (currentHour > 17) binding.textView.setText(R.string.good_evening);
+        if (currentHour > 11) binding.textView.setText(R.string.good_afternoon);
+        if (currentHour > 15) binding.textView.setText(R.string.good_evening);
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override

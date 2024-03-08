@@ -29,6 +29,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
     List<MyPolicies> items = new ArrayList<>();
 
+    List<String> docId = new ArrayList<>();
     YourPoliciesAdapter adapter;
     private ActivityCustomerServiceBinding binding;
 
@@ -58,7 +59,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
             }
         });
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(CustomerServiceActivity.this));
-        adapter = new YourPoliciesAdapter(CustomerServiceActivity.this, items);
+        adapter = new YourPoliciesAdapter(CustomerServiceActivity.this, items,docId);
         binding.recyclerView.setAdapter(adapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -69,8 +70,10 @@ public class CustomerServiceActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             items.clear();
+                            docId.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 items.add(document.toObject(MyPolicies.class));
+                                docId.add(document.getId());
                             }
                             adapter.notifyDataSetChanged();
 

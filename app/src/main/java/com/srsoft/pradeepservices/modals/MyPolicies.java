@@ -3,7 +3,7 @@ package com.srsoft.pradeepservices.modals;
 public class MyPolicies {
 
     private String policyNumber;
-    private String nextDue;
+    private String nextDueDate;
     private String mobileNumber;
     private String nomineeName;
     private String nomineeAge;
@@ -17,7 +17,7 @@ public class MyPolicies {
 
     private String dob;
 
-    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob,String nomineeAge, String mobileNumber, String nextDue, String policyNumber,String nomineeName) {
+    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob,String nomineeAge, String mobileNumber, String nextDueDate, String policyNumber,String nomineeName) {
         this.name = name;
         this.planName = planName;
         this.dateofCommencement = dateofCommencement;
@@ -28,7 +28,7 @@ public class MyPolicies {
         this.dob = dob;
         this.nomineeAge = nomineeAge;
         this.mobileNumber = mobileNumber;
-        this.nextDue = nextDue;
+        this.nextDueDate = nextDueDate;
         this.policyNumber = policyNumber;
         this.nomineeName = nomineeName;
     }
@@ -52,12 +52,12 @@ public class MyPolicies {
         this.nomineeName = nomineeName;
     }
 
-    public String getNextDue() {
-        return nextDue;
+    public String getnextDueDate() {
+        return nextDueDate;
     }
 
-    public void setNextDue(String nextDue) {
-        this.nextDue = nextDue;
+    public void setnextDueDate(String nextDueDate) {
+        this.nextDueDate = nextDueDate;
     }
 
     public String getMobileNumber() {

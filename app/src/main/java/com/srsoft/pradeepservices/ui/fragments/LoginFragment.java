@@ -75,7 +75,7 @@ public class LoginFragment extends Fragment {
     private void validateUser() {
 
         String email = binding.etEmail.getText().toString();
-        String password = binding.etPassword.getText().toString().toUpperCase();
+        String password = binding.etPassword.getText().toString();
 
         if (email.matches("")) {
             binding.etEmail.setError("Enter Email");
@@ -92,7 +92,7 @@ public class LoginFragment extends Fragment {
                         startActivity(intent);
                         getActivity().finishAffinity();
                     } else {
-                        Toast.makeText(getContext(), task.getException().toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Incorrect Email or Password", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
