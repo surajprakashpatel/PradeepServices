@@ -15,10 +15,17 @@ import com.srsoft.pradeepservices.databinding.ItemCommonBinding;
 import com.srsoft.pradeepservices.modals.MyPolicies;
 import com.srsoft.pradeepservices.ui.activities.AddPolicyActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapter.MyViewHolder> {
     private Context context;
+
     private List<MyPolicies> items;
 
     private List<String> docId;
@@ -43,11 +50,15 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
         MyPolicies item = items.get(position);
         String id = docId.get(position);
 
+
+
+
         holder.mBinding.tvTitle.setText(item.getName());
 
         holder.mBinding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 //show Alert Dialog
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setTitle("Your Plan/Policy");
@@ -57,8 +68,9 @@ public class YourPoliciesAdapter extends RecyclerView.Adapter<YourPoliciesAdapte
                         "\n\nDate of Birth: " + item.getDob() +
                         "\n\nMobile Number: " + item.getMobileNumber() +
                         "\n\nCommencement Date: " + item.getDateofCommencement() +
+                        "\n\nPremium: Rs. " + item.getPremiumAmount() +"/-"+
                         "\n\nMode: " + item.getPremiumFrequency()+
-                        "\n\nNext Due Date: " + item.getnextDueDate() +
+                        "\n\nNext Due Date: " + item.getnextDueDate()+
                         "\n\nMaturity Date: " + item.getMaturity() +
                         "\n\nLast Premium: " + item.getLastPremiumDate() +
                         "\n\nNominee Name: " + item.getNomineeName() +

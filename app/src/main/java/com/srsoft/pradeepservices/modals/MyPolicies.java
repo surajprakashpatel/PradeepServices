@@ -15,9 +15,10 @@ public class MyPolicies {
     private String sumAssured;
     private String premiumFrequency;
 
+    private String premiumAmount;
     private String dob;
 
-    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob,String nomineeAge, String mobileNumber, String nextDueDate, String policyNumber,String nomineeName) {
+    public MyPolicies(String name, String planName, String dateofCommencement, String lastPremiumDate, String maturity, String sumAssured, String premiumFrequency, String dob,String nomineeAge, String mobileNumber, String nextDueDate, String policyNumber,String nomineeName, String premiumAmount) {
         this.name = name;
         this.planName = planName;
         this.dateofCommencement = dateofCommencement;
@@ -26,6 +27,7 @@ public class MyPolicies {
         this.sumAssured = sumAssured;
         this.premiumFrequency = premiumFrequency;
         this.dob = dob;
+        this.premiumAmount = premiumAmount;
         this.nomineeAge = nomineeAge;
         this.mobileNumber = mobileNumber;
         this.nextDueDate = nextDueDate;
@@ -36,6 +38,9 @@ public class MyPolicies {
     public MyPolicies() {
     }
 
+    public String getPremiumAmount(){
+        return premiumAmount;
+    }
     public String getPolicyNumber() {
         return policyNumber;
     }

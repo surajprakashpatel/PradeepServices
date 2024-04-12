@@ -209,7 +209,28 @@
 
 
             </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView76"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="@dimen/_2sdp">
 
+                <EditText
+                    android:id="@+id/etPremiumAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:hint="Premium Amount"
+                    android:padding="@dimen/_12sdp"
+                    android:inputType="number"
+                    android:text=""
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </com.google.android.material.card.MaterialCardView>
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView6"
                 android:layout_width="match_parent"
@@ -231,6 +252,7 @@
 
 
             </com.google.android.material.card.MaterialCardView>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/materialCardView7"

@@ -125,6 +125,7 @@ public class AddPolicyActivity extends AppCompatActivity {
                 data.put("lastPremiumDate", binding.etLastPremiumDate.getText().toString());
                 data.put("maturity", binding.etMaturity.getText().toString());
                 data.put("sumAssured", binding.etSumAssured.getText().toString());
+                data.put("premiumAmount",binding.etPremiumAmount.getText().toString());
                 data.put("planName", binding.etPlanName.getText().toString());
                 data.put("premiumFrequency", paymentFrequency);
                 FirebaseInAppMessaging.getInstance().triggerEvent(paymentFrequency);

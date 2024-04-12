@@ -21,7 +21,11 @@ import com.srsoft.pradeepservices.databinding.ActivityCustomerServiceBinding;
 import com.srsoft.pradeepservices.modals.MyPolicies;
 import com.srsoft.pradeepservices.utils.PreferenceUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -29,6 +33,7 @@ public class CustomerServiceActivity extends AppCompatActivity {
 
     List<MyPolicies> items = new ArrayList<>();
 
+    Date givenDate = null;
     List<String> docId = new ArrayList<>();
     YourPoliciesAdapter adapter;
     private ActivityCustomerServiceBinding binding;
@@ -74,6 +79,42 @@ public class CustomerServiceActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 items.add(document.toObject(MyPolicies.class));
                                 docId.add(document.getId());
+                                String dateString = document.getString("nextDueDate");
+                                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                                try {
+                                    givenDate = sdf.parse(dateString);
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+
+                                if (givenDate != null) {
+                                    Calendar calendar = Calendar.getInstance();
+                                    calendar.setTime(givenDate);
+                                    Calendar currentCalendar = Calendar.getInstance();
+
+                                    if (calendar.before(currentCalendar)) {
+                                        // Given date is in the past, add one month
+                                        if(document.getString("premiumFrequency").matches("Monthly")){
+                                            calendar.add(Calendar.MONTH, 1);
+                                        }
+                                        if(document.getString("premiumFrequency").matches("Quarterly")){
+                                            calendar.add(Calendar.MONTH, 3);
+                                        } if(document.getString("premiumFrequency").matches("Half Yearly")){
+                                            calendar.add(Calendar.MONTH, 6);
+                                        }
+                                        if(document.getString("premiumFrequency").matches("Yearly")){
+                                            calendar.add(Calendar.MONTH, 12);
+                                        }
+                                        givenDate = calendar.getTime();
+                                        db.collection("user").document(user.getUid())
+                                                .collection("policies").document(document.getId()
+                                                ).update("nextDueDate", sdf.format(givenDate));
+
+                                    } else {
+
+                                    }
+
+                                }
                             }
                             adapter.notifyDataSetChanged();
 
